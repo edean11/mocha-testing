@@ -22,5 +22,17 @@ describe('Constructor', function () {
       var constructed = new Constructor('bar');
       expect(constructed.publicVariable).to.equal('bar');
     });
-  });
+   });
+
+  describe('#publicMethod', function () {
+    it('should return "Hello World"', function () {
+      var constructed = new Constructor();
+      expect(constructed.publicVariable).to.equal('foo');
+    });
+    it('should accept an argument', function () {
+      var constructed = new Constructor();
+      expect(constructed.publicMethod()).to.equal('Hello World');
+      expect(constructed.hasOwnProperty('publicMethod')).to.be.false;
+    });
+   });
 });
